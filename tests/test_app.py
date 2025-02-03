@@ -1,15 +1,16 @@
 # test_app.py
+import os
+import sys
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import pytest
 from app import app  # Assuming your Flask code is in app.py
-import os
-import sys
+
 
 # Add the repository root to sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-import pytest
-from app import app  # Now this import should work
 
 @pytest.fixture
 def client():
