@@ -47,7 +47,7 @@ jobs:
         run: docker build -t ${{secrets.DOCKEHUB_USERNAME}}/python-flask:${{ github.sha }} .
 
       - name: Scan Docker image with Trivy
-        uses: aquasecurity/trivy-action@v0.10.0
+        uses: aquasecurity/trivy-action@master
         with:
           image-ref: ${{secrets.DOCKEHUB_USERNAME}}/python-flask:${{ github.sha }}
 
