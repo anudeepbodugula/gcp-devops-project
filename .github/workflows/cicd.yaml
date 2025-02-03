@@ -11,6 +11,11 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
+
+      - name: List Repository Structure
+        run: |
+          pwd
+          ls -la
       
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -23,6 +28,7 @@ jobs:
       - name: Run Unit Tests with pytest
         run: |
           pip install pytest
+          cd ${{ github.workspace }}
           pytest --maxfail=1 --disable-warnings -q
 
       - name: Lint with Flake8
