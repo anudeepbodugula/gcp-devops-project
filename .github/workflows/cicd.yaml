@@ -52,7 +52,7 @@ jobs:
           image-ref: ${{secrets.DOCKEHUB_USERNAME}}/python-flask:${{ github.sha }}
 
       - name: Login to Docker hub
-        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKEHUB_USERNAME }}" --password-stdin
 
       - name: Tag and Push Docker image
         run: | 
